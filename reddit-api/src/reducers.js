@@ -1,4 +1,4 @@
-import { cobineReducers } from 'redux'
+import { combineReducers } from 'redux'
 import {
   SELECT_SUBREDDIT,
   INVALIDATE_SUBREDDIT,
