@@ -5,7 +5,7 @@ import rootReducer from './reducers'
 
 const loggerMiddleware = createLogger()
 
-export default function vonfigureStore(preloadedState) {
+export default function configureStore(preloadedState) {
   return createStore(
     rootReducer,
     preloadedState,
