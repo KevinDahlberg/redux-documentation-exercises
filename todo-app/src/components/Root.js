@@ -1,20 +1,21 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
-import { Router, Route, Switch } from 'react-router-dom'
-import createHashHistory from 'history/createHashHistory'
+import { BrowserRouter, Route } from 'react-router-dom'
+import createHistory from 'history/createHashHistory'
 import { ConnectedRouter } from 'react-router-redux'
+import { createStore } from 'redux'
 
 import App from './App'
+import todoApp from '../reducers/index.js'
 
-const history = createHashHistory();
+let store = createStore(todoApp)
 
-const Root = ({ store }) => (
+const history = createHistory();
+
+const Root = () => (
   <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Switch>
+    <BrowserRouter history={history}>
         <Route exact path="/(:filter)" component={App} />
-      </Switch>
-    </ConnectedRouter>
+    </BrowserRouter>
   </Provider>
 )
