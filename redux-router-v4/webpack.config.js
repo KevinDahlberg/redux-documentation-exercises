@@ -16,19 +16,11 @@ module.exports =
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader',
         options: {
-          presets: ['env', 'stage-0', 'react']
-        }
-      },
-      {
-        test: /\.jsx$/,
-        exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['env', 'stage-0', 'react']
+          presets: ['env', 'react', 'stage-0']
         }
       }
     ]
